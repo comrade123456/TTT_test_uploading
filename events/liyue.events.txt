@@ -9,106 +9,112 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		hidden_effect = {
-			retire_character = LYU_morax
+			kill_country_leader = yes
 			news_event = {
 				id = global_news.1
 				hours = 12
 			}
 			set_research_slots = 2
-			mark_focus_tree_layout_dirty = yes
 		}
 	}
 	option = { 
 		name = liyue.1.a
-		unlock_decision_category_tooltip = Liyue_political_crisis
-        set_country_flag = Liyue_crisis
-		activate_mission = liyue_civilwar_is_coming
 		ai_chance = {
 			factor = 100
-        }	        
+        }	
+        set_politics = {
+            ruling_party = liberalism
+        }           
+		hidden_effect = {
+			country_event = {
+				id = liyue.3
+				days = 15
+			}
+		}
 	}
 
-	#option = {   政治斗争机制(暂时用不到)
-	#	name = liyue.1.b
-	#	custom_effect_tooltip = LYU_deal_with_mess  
-	#	set_country_flag = Ganyu_linshi_leader 
-	#	hidden_effect = {
-	#		set_popularities = {
-	#			reformism = 35
-	#			communism = 25
-	#			authoritarianism = 27
-	#			liberalism = 13
-	#		}
-	#	}	
-	#}
-	#option = { 
-	#	name = liyue.1.c
-    #    set_politics = {
-    #        ruling_party = communism                            
-	#	}
-	#	add_popularity = {
-	#	    ideology = communism
-	#	    popularity = 1
-	#	}
-    #    promote_character = LYU_Keqing
-    #    set_party_name = { 
-    #        ideology = communism 
-    #        long_name = LYU_communism_Keqing_party_long 
-    #        name = LYU_communism_Keqing_party 
-    #    }
-	#	set_cosmetic_tag = LYUKQ		
-	#}
+	option = { 
+		name = liyue.1.b
+		custom_effect_tooltip = LYU_deal_with_mess
+		set_country_flag = Ganyu_linshi_leader
+		hidden_effect = {
+			set_popularities = {
+				reformism = 35
+				communism = 25
+				authoritarianism = 27
+				liberalism = 13
+			}
+		}	
+
+	}
+	option = { 
+		name = liyue.1.c
+        set_politics = {
+            ruling_party = communism                            
+		}
+		add_popularity = {
+		    ideology = communism
+		    popularity = 1
+		}
+        promote_character = LYU_Keqing
+        set_party_name = { 
+            ideology = communism 
+            long_name = LYU_communism_Keqing_party_long 
+            name = LYU_communism_Keqing_party 
+        }
+		set_cosmetic_tag = LYUKQ		
+	}
 }
  
-#country_event = {
-#	id = liyue.3
-#	title = liyue.3.t
-#	desc = liyue.3.d
-#    picture = GFX_report_event_gyzb
-#	fire_only_once = yes
-#	is_triggered_only = yes
-#	option = { 
-#		name = liyue.3.a
-#        set_politics = {
-#            ruling_party = reformism
-#        }
-#		custom_effect_tooltip = Quarter_year_countdown_tt
-#		hidden_effect = {
-#			news_event = {
-#				id = global_news.2
-#				hours = 12
-#			}
-#			country_event = {
-#				id = liyue.4
-#				days = 2
-#			}
-#			country_event = {
-#				id = liyue.6
-#				days = 3
-#			}
-#			country_event = {
-#				id = liyue.7
-#				days = 5
-#			}
-#			country_event = {
-#				id = liyue.8
-#				days = 7
-#			}
-#			country_event = {
-#				id = liyue.10
-#				days = 15
-#			}
-#			country_event = {
-#				id = liyue.11
-#				days = 20
-#			}
-#			country_event = {
-#				id = liyue.12
-#				days = 90
-#			}
-#		}
-#	}
-#}
+country_event = {
+	id = liyue.3
+	title = liyue.3.t
+	desc = liyue.3.d
+    picture = GFX_report_event_gyzb
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = liyue.3.a
+        set_politics = {
+            ruling_party = reformism
+        }
+		custom_effect_tooltip = Quarter_year_countdown_tt
+		hidden_effect = {
+			news_event = {
+				id = global_news.2
+				hours = 12
+			}
+			country_event = {
+				id = liyue.4
+				days = 2
+			}
+			country_event = {
+				id = liyue.6
+				days = 3
+			}
+			country_event = {
+				id = liyue.7
+				days = 5
+			}
+			country_event = {
+				id = liyue.8
+				days = 7
+			}
+			country_event = {
+				id = liyue.10
+				days = 15
+			}
+			country_event = {
+				id = liyue.11
+				days = 20
+			}
+			country_event = {
+				id = liyue.12
+				days = 90
+			}
+		}
+	}
+}
 
 country_event = {
 	id = liyue.4
@@ -124,10 +130,7 @@ country_event = {
 			retire_character = LYU_NingGuang
 			retire_character = LYU_Yunjin
 			retire_character = LYU_Xinyan
-			retire_character = LYU_BeiDou
-			retire_character = LYU_Xingqiu
-			
-		    NNG = { transfer_state = 145 } 
+		    BDG = { transfer_state = 145 } 
 		    NNG = { transfer_state = 126 } 
 		    XQG = { transfer_state = 148 } 
 		    XQG = { transfer_state = 129 } 
@@ -135,6 +138,14 @@ country_event = {
 		    XQG = { transfer_state = 149 } 
 		    XQG = { transfer_state = 150 }  
 		    NNG = { transfer_state = 242 } 
+			BDG = { 
+			    every_owned_state = {
+					add_core_of = BDG
+			        add_core_of = NNG
+					remove_core_of = LYU
+					set_state_flag = is_Liyues_territory 
+	  	        } 
+		    }
 			XQG = { 
 			    every_owned_state = {
 			        add_core_of = XQG
@@ -152,11 +163,11 @@ country_event = {
 		    } 
 			NNG = {
 				puppet = XQG
+				puppet = BDG
 			}
 			NNG = {
 				inherit_technology = LYU
                 recruit_character = LYU_NingGuang
-				recruit_character = LYU_BeiDou
 				recruit_character = LYU_Yunjin
 				recruit_character = LYU_Xinyan
 			    promote_character = { 
@@ -170,6 +181,24 @@ country_event = {
 				promote_character = { 
 					Character = LYU_Xinyan
 					ideology = anarcho_syndicalism
+				}
+			}
+
+			retire_character = LYU_BeiDou
+			retire_character = LYU_Xingqiu
+			BDG = {
+				inherit_technology = LYU
+				recruit_character = LYU_BeiDou
+				set_politics = {
+					ruling_party = liberalism
+					election_frequency = 60
+					elections_allowed = yes
+				}
+				set_popularities = {
+					authoritarianism = 30
+					totalitarianism = 10
+					national_socialism = 10
+					liberalism = 50
 				}
 				promote_character = {
 					character = LYU_BeiDou
@@ -198,18 +227,18 @@ country_event = {
 					ideology = solidarism
 			    }
 			}  
-			XQG = { load_oob = "XQG" }      
-			NNG = { load_oob = "NNG" }
-			log = "[GetDateText]: [Root.GetName]: NingGuangand_Xingqiu_has_load_oob"
+			XQG = { load_oob = "XQG" }     
+			BDG = { load_oob = "BDG" }     
+			NNG = { load_oob = "NNG" } 
 			transfer_units_fraction = {
 				target = XQG
-				size = 0.08
-				stockpile_ratio = 0.08
+				size = 0.15
+				stockpile_ratio = 0.15
 			} 
 			transfer_units_fraction = {
 				target = NNG
-				size = 0.15
-				stockpile_ratio = 0.15
+				size = 0.2
+				stockpile_ratio = 0.2
 			} 
 			every_owned_state = {
 				set_state_flag = is_Liyues_territory
@@ -275,8 +304,8 @@ country_event = {
 			} 
 			transfer_units_fraction = {
 				target = KQG
-				size = 0.2
-				stockpile_ratio = 0.2
+				size = 0.25
+				stockpile_ratio = 0.25
 			}
 			KQG = { 
 				country_event = {
@@ -555,9 +584,6 @@ country_event = {
 				days = 60
 			}
 		}
-		hidden_effect = {
-			ANG = { country_event = { id = heiyan.1 days = 1 } }
-		}
 	}
 	option = { 
 		name = liyue.11.b
@@ -588,9 +614,6 @@ country_event = {
 				id = liyue.12
 				days = 60
 			}
-		}
-		hidden_effect = {
-			ANG = { country_event = { id = heiyan.1 days = 1 } }
 		}
 	}
 	option = { 
@@ -659,7 +682,8 @@ country_event = {
 		annex_country = { target = RTG transfer_troops = yes }          
 		annex_country = { target = LYU transfer_troops = yes }  
 		annex_country = { target = ZDG transfer_troops = yes }          
-		annex_country = { target = ANG transfer_troops = yes }           
+		annex_country = { target = ANG transfer_troops = yes }  
+		annex_country = { target = BDG transfer_troops = yes }          
 		annex_country = { target = KQG transfer_troops = yes }  
 		annex_country = { target = XQG transfer_troops = yes }            
 		annex_country = { target = XOG transfer_troops = yes }          
